@@ -26,18 +26,17 @@ export const Footer = () => {
 				<div className="flex items-center gap-2">
 					{socialLink.map((item, i) => (
 						<Link href={item.link} key={i}>
-							<Image src={`/icons/${item.icon}`} width={35} height={35} alt={item.icon} />
+							<Image src={`/icons/${item.icon}`} width={25} height={25} alt={item.icon} />
 						</Link>
 					))}
 				</div>
 				<div className="flex items-center gap-2">
 					{paymentIcons.map((item, i) => (
 						<Link href={item.link} key={i}>
-							<Image src={`/icons/${item.icon}`} width={32} height={32} alt={item.icon} />
+							<Image src={`/icons/${item.icon}`} width={27} height={27} alt={item.icon} />
 						</Link>
 					))}
 				</div>
-				<div></div>
 			</div>
 			{/* last bar */}
 			<div className=" bg-primary-light px-2 py-5">

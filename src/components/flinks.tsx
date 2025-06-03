@@ -12,7 +12,7 @@ export const Flinks = ({ header, links }: IFLinks) => {
 			<ul className="flex flex-col space-y-3  text-sm">
 				{links.map((item, i) => {
 					return (
-						<li className="capitalize" key={i}>
+						<li className="capitalize font-semibold" key={i}>
 							{item}
 						</li>
 					)
