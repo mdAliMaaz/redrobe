@@ -8,7 +8,7 @@ import Button from './shared/button'
 export const JoinAsCreator = () => {
 	return (
 		<Container size="lg">
-			<section className="w-full">
+			<section className="w-full" id='join'>
 				<h1 className="uppercase text-lg md:text-2xl text-center">Join As Creator</h1>
 				<WelcomToRedRobe />
 				<div>

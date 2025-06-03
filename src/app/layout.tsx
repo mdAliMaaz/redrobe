@@ -3,6 +3,7 @@ import { Cormorant, Montserrat } from 'next/font/google'
 
 import './globals.css'
 import Navbar from '@/components/shared/navbar'
+import { Footer } from '@/components/shared/fotter'
 
 const cormorant = Cormorant({
 	subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({
 			<body className={` antialiased`}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)

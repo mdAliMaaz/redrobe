@@ -21,6 +21,7 @@ img {
 }
 body {
 	font-family: var(--font-montserrat), serif;
+	scroll-behavior: smooth;
 }
 .gradient-01 {
 	background-image: linear-gradient(

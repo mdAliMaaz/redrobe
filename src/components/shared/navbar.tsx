@@ -7,7 +7,9 @@ const Navbar = () => {
 		<Container size="sm">
 			<nav className="w-full flex items-center justify-between">
 				<Logo />
-				<Button text="Join us" type="button" rounded />
+				<a href="#join">
+					<Button text="Join us" type="button" rounded />
+				</a>
 			</nav>
 		</Container>
 	)
