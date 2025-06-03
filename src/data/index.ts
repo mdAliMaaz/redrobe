@@ -5,7 +5,7 @@ export const aboutUs_2 =
 	'Ready to wear apparel or garment manufacturing involves many processing steps, beginning with the idea or design concept and ending with a finished product. Apparel manufacturing process involves Product Design, Fabric Selection and Inspection, Patternmaking, Grading, Marking, Spreading, Cutting, Bundling, Sewing, Pressing or Folding, Finishing and Detailing, Dyeing and Washing, QC etc.Ready to wear apparel or garment manufacturing involves many processing steps, beginning with'
 
 export const flinks = [
-	{ header: 'help and support', links: ['help', 'querise', 'team'] },
+	{ header: 'help and support', links: ['help', 'queries', 'team'] },
 	{ header: 'about', links: ['about us', 'fatures', 'Regiser/Join waitlist'] },
 	{ header: 'shopping from', links: ['india'] },
 ]
