@@ -4,10 +4,9 @@
 	--color-primary-light: #fcf8ef;
 	--color-primary-red: #952222;
 	--color-dark: #2d2a27;
-	--color-secondary-light: #F2E4D5;
-	--font-cormorant: 'Cormorant', serif;
-	--font-montserrat: 'Montserrat', sans-serif;
-
+	--color-secondary-light: #f2e4d5;
+	--font-quicksand: 'Quicksand', sans-serif;
+	--font-playfair-display:'Playfair Display', serif;
 }
 
 @theme {
@@ -15,13 +14,13 @@
 	--color-dark: var(--bg-dark);
 	--color-primary-red: var(--color-primary-red);
 	--color-secondary-light: var(--color-secondary-light);
-	--font-cormorant: var(--font-cormorant);
+	--font-playfair-display: var(--font-playfair-display);
 }
 img {
 	max-inline-size: 100%;
 }
 body {
-	font-family: var(--font-montserrat), serif;
+	font-family: var(--font-quicksand), serif;
 	scroll-behavior: smooth;
 }
 .gradient-01 {

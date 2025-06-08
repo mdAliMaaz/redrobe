@@ -10,7 +10,7 @@ const Hero = () => {
 				<Image
 					src={'/images/vector_1.png'}
 					alt="vector"
-					className="absolute -bottom-5 left-0"
+					className="hidden md:block absolute -bottom-5 left-0"
 					width={170}
 					height={170}
 				/>

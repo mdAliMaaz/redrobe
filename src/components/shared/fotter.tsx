@@ -1,10 +1,25 @@
 'use client'
-import { flinks, paymentIcons, socialLink } from '@/data'
+import { flinks, paymentIcons } from '@/data'
 import React, { useState } from 'react'
 import { Flinks } from '../flinks'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Instagram, Twitter, Youtube } from 'lucide-react'
 
+export const socialLink = [
+	{
+		icon: <Instagram size={30} className="text-primary-light" />,
+		link: 'https://www.instagram.com/redrobe_in/?igsh=anN3cmY5dmpzOTZr#',
+	},
+	{
+		icon: <Youtube size={30} className="text-primary-light" />,
+		link: 'https://www.youtube.com/@ReDrobe_in',
+	},
+	{
+		icon: <Twitter size={30} className="text-primary-light" />,
+		link: 'https://x.com/redrobe_in?s=21',
+	},
+]
 const currentYear = new Date().getFullYear()
 
 export const Footer = () => {
@@ -23,10 +38,10 @@ export const Footer = () => {
 
 			{/* socil links ar here */}
 			<div className="w-full md:w-[80%] m-auto bg-primary-red flex flex-col md:flex-row  md:space-x-30 py-5 px-2 gap-5">
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-4">
 					{socialLink.map((item, i) => (
 						<Link href={item.link} key={i}>
-							<Image src={`/icons/${item.icon}`} width={25} height={25} alt={item.icon} />
+							{item.icon}
 						</Link>
 					))}
 				</div>

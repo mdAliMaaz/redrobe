@@ -33,12 +33,12 @@ const AboutSection = () => {
 				<div className="size-[50%] gradient-02 absolute"></div>
 				<div className="border-[1px] border-white/40 rounded-t-full pt-2.5 px-2.5  md:pt-4 md:px-4 relative">
 					<div className="flex items-end justify-center border-[1px] border-white/40 w-fit rounded-t-full pt-1.5 px-1.5 md:pt-3 md:px-3">
-						<h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary-red text-8xl font-cormorant">
-							RedRobe.
+						<h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary-red text-8xl font-playfair-display">
+							ReDrobe.
 						</h1>
 						<div className="absolute left-1/2 top-[80%] -translate-x-1/2">
 							<Link href={'#join'}>
-								<Button text="JOIN NOW!" type="button" bgColor="white" width='full' />
+								<Button text="JOIN NOW!" type="button" bgColor="white" width="full" />
 							</Link>
 						</div>
 						<Image src={'/images/about-4.png'} alt="about-4" width={400} height={400} priority />

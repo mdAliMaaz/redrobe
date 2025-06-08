@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
-import { Cormorant, Montserrat } from 'next/font/google'
+import { Playfair_Display, Montserrat, Quicksand } from 'next/font/google'
 
 import './globals.css'
 import Navbar from '@/components/shared/navbar'
 import { Footer } from '@/components/shared/fotter'
 
-const cormorant = Cormorant({
+const playfair = Playfair_Display({
 	subsets: ['latin'],
 	weight: ['400', '500', '700'], // choose the weights you need
-	variable: '--font-cormorant',
+	variable: '--font-playfair-display',
 	display: 'swap',
 })
 
-const montserrat = Montserrat({
+const quicksand = Quicksand({
+	variable: '--font-quicksnad',
 	subsets: ['latin'],
-	weight: ['400', '500', '600', '700'], // adjust as needed
-	variable: '--font-montserrat',
+	weight: ['300', '400', '500', '600', '700'], // Choose weights you need
 	display: 'swap',
 })
 
@@ -31,7 +31,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+		<html lang="en" className={`${playfair.variable} ${quicksand.variable}`}>
 			<body className={` antialiased`}>
 				<Navbar />
 				{children}
