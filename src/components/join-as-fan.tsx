@@ -22,7 +22,7 @@ function JoinAsFan() {
 	function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
 		const { name, value } = e.target
 		setFormData({ ...formData, [name]: value })
-	}
+}
 
 	async function handleOnSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault()
