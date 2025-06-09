@@ -7,7 +7,7 @@ interface IButtonProps {
 	width?: string
 	rounded?: boolean
 	bgColor?: string
-	disabled: boolean
+	disabled?: boolean
 }
 
 const Button = ({ text, type, width, rounded, bgColor, disabled }: IButtonProps) => {
