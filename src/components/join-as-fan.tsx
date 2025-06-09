@@ -9,7 +9,12 @@ import Button from './shared/button'
 import Container from './shared/container'
 
 function JoinAsFan() {
-	const [formData, setFormData] = useState({ name: '', email: '', phoneNumber: '', joinedAs: 'Fan' })
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		phoneNumber: '',
+		joinedAs: 'Fan',
+	})
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState<string | null>(null)
 	const [success, setSuccess] = useState(false)
@@ -34,7 +39,7 @@ function JoinAsFan() {
 			const URL = process.env.NEXT_PUBLIC_BACKEND_URL
 			const response = await axios.post(`${URL}/waitlist`, formData)
 			setSuccess(true)
-			setFormData({ name: '', email: '', phoneNumber: '', jonedAs: 'Fan' })
+			setFormData({ name: '', email: '', phoneNumber: '', joinedAs: 'Fan' })
 		} catch (error: any) {
 			setError(error?.response?.data?.message || 'Something went wrong.')
 		} finally {
@@ -57,7 +62,13 @@ function JoinAsFan() {
 					/>
 					<form method="post" onSubmit={handleOnSubmit} className="flex flex-col space-y-5">
 						<h1>Let's get you onboarded</h1>
-						<Input name="name" lable="name" value={formData.name} required handleOnChange={handleOnChange} />
+						<Input
+							name="name"
+							lable="name"
+							value={formData.name}
+							required
+							handleOnChange={handleOnChange}
+						/>
 						<Input
 							name="email"
 							lable="email"
