@@ -1,4 +1,4 @@
-import { types } from 'node:util'
+'use client'
 import React from 'react'
 
 interface IButtonProps {
@@ -7,11 +7,13 @@ interface IButtonProps {
 	width?: string
 	rounded?: boolean
 	bgColor?: string
+	disabled: boolean
 }
 
-const Button = ({ text, type, width, rounded, bgColor }: IButtonProps) => {
+const Button = ({ text, type, width, rounded, bgColor, disabled }: IButtonProps) => {
 	return (
 		<button
+			disabled={disabled}
 			type={type}
 			className={`${width === 'full' ? 'w-full' : 'w-20 md:w-32'} ${rounded && 'rounded-full'} ${
 				bgColor === 'white'
