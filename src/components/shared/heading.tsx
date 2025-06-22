@@ -19,7 +19,7 @@ const Heading = ({ text, className, position }: IHeadingProps) => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						duration: 0.25,
+						duration: 0.5,
 						delay: i / 10,
 					}}
 					key={i}
