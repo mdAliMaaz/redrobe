@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { motion } from 'motion/react'
 
 interface IButtonProps {
 	text: string
@@ -12,7 +13,9 @@ interface IButtonProps {
 
 const Button = ({ text, type, width, rounded, bgColor, disabled }: IButtonProps) => {
 	return (
-		<button
+		<motion.button
+			whileHover={{ scale: 1.1 }}
+			whileTap={{ scale: 0.95 }}
 			disabled={disabled}
 			type={type}
 			className={`${width === 'full' ? 'w-full' : 'w-20 md:w-32'} ${rounded && 'rounded-full'} ${
@@ -22,7 +25,7 @@ const Button = ({ text, type, width, rounded, bgColor, disabled }: IButtonProps)
 			}  h-[40px] text-xs font-semibold p-1 md:p-2 transition-colors border-[1px] border-primary-red`}
 		>
 			{text}
-		</button>
+		</motion.button>
 	)
 }
 

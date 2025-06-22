@@ -33,12 +33,12 @@ export async function POST(req: NextRequest) {
 		const newUser = await User.create(body)
 
 		if (newUser) {
-			// await sendMail({
-			// 	to: newUser.email,
-			// 	html: 'HTML',
-			// 	subject: 'Joined waitlisat',
-			// 	text: 'Thank you..',
-			// })
+			await sendMail({
+				to: newUser.email,
+				html: 'HTML',
+				subject: 'Joined waitlisat',
+				text: 'Thank you..',
+			})
 			return NextResponse.json({ message: 'Successfully joined the waitlist!', newUser: newUser })
 		} else {
 			return NextResponse.json({ messge: 'Something went wrong.' })

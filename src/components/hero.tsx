@@ -1,12 +1,15 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
 import Container from './shared/container'
 import Heading from './shared/heading'
+import { motion } from 'motion/react'
 
 const Hero = () => {
 	return (
 		<Container size="lg">
-			<section className="w-full relative">
+			<motion.section className="w-full relative">
 				<Image
 					src={'/images/vector_1.png'}
 					alt="vector"
@@ -29,7 +32,7 @@ const Hero = () => {
 					/>
 					<Image src={'/images/hero-image.png'} width={1650} height={1500} alt="hero-image" />
 				</div>
-			</section>
+			</motion.section>
 		</Container>
 	)
 }

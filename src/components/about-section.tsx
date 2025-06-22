@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Container from './shared/container'
 import Heading from './shared/heading'
@@ -5,8 +6,13 @@ import { aboutUs, aboutUs_2 } from '@/data'
 import Image from 'next/image'
 import Button from './shared/button'
 import Link from 'next/link'
+import { motion } from 'motion/react'
 
 const AboutSection = () => {
+	const hoverEffect = {
+		scale: 1.1,
+		transition: { duration: 0.2 },
+	}
 	return (
 		<>
 			<Container size="lg">
@@ -16,16 +22,25 @@ const AboutSection = () => {
 				</section>
 				{/* Images section start here! */}
 				<section className="my-15 flex flex-col lg:flex-row gap-3  justify-center items-start  lg:justify-evenly">
-					<div className="w-full flex  lg:items-center justify-center lg:justify-start">
+					<motion.div
+						whileHover={hoverEffect}
+						className="w-full flex  lg:items-center justify-center lg:justify-start"
+					>
 						<Image src={'/images/about-1.png'} alt="about-1" height={300} width={300} priority />
-					</div>
-					<div className="w-full flex items-center  justify-center lg:justify-start">
+					</motion.div>
+					<motion.div
+						whileHover={hoverEffect}
+						className="w-full flex items-center  justify-center lg:justify-start"
+					>
 						<Image src={'/images/about-2.png'} alt="about-1" height={300} width={300} priority />
-					</div>
-					<div className="w-full flex justify-center items-center flex-col  gap-10">
+					</motion.div>
+					<motion.div
+						whileHover={hoverEffect}
+						className="w-full flex justify-center items-center flex-col  gap-10"
+					>
 						<Image src={'/images/about-3.png'} alt="about-1" height={300} width={350} priority />
 						<p className="text-sm">{aboutUs_2}</p>
-					</div>
+					</motion.div>
 				</section>
 			</Container>
 			<section className="bg-dark w-full flex items-end justify-center pt-5 px-4 relative overflow-hidden">

@@ -11,7 +11,7 @@ export default function Home() {
 			<AboutSection />
 			<JoinAsCreator />
 			<JoinAsFan />
-			<Subscribe/>
+			<Subscribe />
 		</main>
 	)
 }
