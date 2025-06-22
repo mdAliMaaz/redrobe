@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { Input } from './shared/input'
 import Button from './shared/button'
 import axios from 'axios'
+import ConfettiExplosion from 'react-confetti-explosion'
+import useToast from '@/hooks/useToast'
 
 export const JoinAsCreator = () => {
 	const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ export const JoinAsCreator = () => {
 		phoneNumber: '',
 		joinedAs: 'Creator',
 	})
+	const { showSuccess, showError } = useToast()
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState<string | null>(null)
 	const [success, setSuccess] = useState(false)
@@ -38,8 +41,10 @@ export const JoinAsCreator = () => {
 			const URL = process.env.NEXT_PUBLIC_BACKEND_URL
 			const response = await axios.post(`${URL}/waitlist`, formData)
 			setSuccess(true)
+			showSuccess(response.data.message)
 			setFormData({ name: '', email: '', phoneNumber: '', joinedAs: 'Creator' })
 		} catch (error: any) {
+			showError(error?.response?.data?.message || 'Something went wrong.')
 			setError(error?.response?.data?.message || 'Something went wrong.')
 		} finally {
 			setLoading(false)
@@ -48,7 +53,7 @@ export const JoinAsCreator = () => {
 
 	return (
 		<Container size="lg">
-			<section className="w-full" id="join">
+			<section className="w-full relative" id="join">
 				<h1 className="uppercase text-lg md:text-2xl text-center">Join As Creator</h1>
 				<WelcomToRedRobe />
 				<div>
@@ -93,6 +98,11 @@ export const JoinAsCreator = () => {
 									<p>By creating your account, you agree to our </p>
 									<p className="text-primary-red">Terms and Conditions & Privacy Policy</p>
 								</div>
+							</div>
+							<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								{success && (
+									<ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1400} />
+								)}
 							</div>
 							<Button
 								text={loading ? 'Submitting...' : 'JOIN WAITLIST!'}

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 			})
 		}
 
-		const alreadyExistingUser = await User.findOne({ name })
+		const alreadyExistingUser = await User.findOne({ email })
 
 		if (alreadyExistingUser) {
 			return new Response(JSON.stringify({ message: 'User already in the list.' }), {
@@ -39,11 +39,12 @@ export async function POST(req: NextRequest) {
 			// 	subject: 'Joined waitlisat',
 			// 	text: 'Thank you..',
 			// })
-			return NextResponse.json(newUser)
+			return NextResponse.json({ message: 'Successfully joined the waitlist!', newUser: newUser })
 		} else {
 			return NextResponse.json({ messge: 'Something went wrong.' })
 		}
 	} catch (e: any) {
+		console.log(e)
 		return new Response(JSON.stringify({ message: 'Internal server error.' }), {
 			status: 201,
 			headers: { 'Content-Type': 'application/json' },

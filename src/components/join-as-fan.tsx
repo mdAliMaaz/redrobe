@@ -7,8 +7,8 @@ import Image from 'next/image'
 import { Input } from './shared/input'
 import Button from './shared/button'
 import Container from './shared/container'
-import useExploding from '@/hooks/useExploding'
 import ConfettiExplosion from 'react-confetti-explosion'
+import useToast from '@/hooks/useToast'
 
 function JoinAsFan() {
 	const [formData, setFormData] = useState({
@@ -18,6 +18,7 @@ function JoinAsFan() {
 		joinedAs: 'Fan',
 	})
 
+	const { showSuccess, showError } = useToast()
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState<string | null>(null)
 	const [success, setSuccess] = useState(false)
@@ -31,19 +32,22 @@ function JoinAsFan() {
 		e.preventDefault()
 		setError(null)
 		setSuccess(false)
-
+		// validation
 		if (!formData.name || !formData.email) {
 			setError('Name and email are required.')
 			return
 		}
+		// api call
 		try {
 			setLoading(true)
 			const URL = process.env.NEXT_PUBLIC_BACKEND_URL
 			const response = await axios.post(`${URL}/waitlist`, formData)
 			setSuccess(true)
 			setFormData({ name: '', email: '', phoneNumber: '', joinedAs: 'Fan' })
+			showSuccess(response.data.message)
 		} catch (error: any) {
 			setError(error?.response?.data?.message || 'Something went wrong.')
+			showError(error?.response?.data?.message || 'Something went wrong.')
 		} finally {
 			setLoading(false)
 		}
@@ -98,7 +102,7 @@ function JoinAsFan() {
 						</div>
 						<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 							{success && (
-								<ConfettiExplosion force={0.8} duration={5000} particleCount={500} width={1600} />
+								<ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1400} />
 							)}
 						</div>
 						<Button

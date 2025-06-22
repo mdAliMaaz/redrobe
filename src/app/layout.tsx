@@ -4,6 +4,7 @@ import { Playfair_Display, Montserrat, Quicksand } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/shared/navbar'
 import { Footer } from '@/components/shared/fotter'
+import { Toaster } from 'react-hot-toast'
 
 const playfair = Playfair_Display({
 	subsets: ['latin'],
@@ -35,6 +36,15 @@ export default function RootLayout({
 			<body className={` antialiased`}>
 				<Navbar />
 				{children}
+				<Toaster
+					position="top-right"
+					toastOptions={{
+						style: {
+							background: '#333',
+							color: '#fff',
+						},
+					}}
+				/>
 				<Footer />
 			</body>
 		</html>
