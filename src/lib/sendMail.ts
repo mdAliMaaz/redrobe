@@ -24,6 +24,7 @@ export async function sendMail({ to, subject, html }: IMailOptions) {
 
 	try {
 		const info = await transporter.sendMail(mailOptions)
+		console.log('Emial sent successfully')
 		return { success: true, info }
 	} catch (error) {
 		console.error('Email send error:', error)
