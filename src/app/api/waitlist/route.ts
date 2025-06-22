@@ -1,3 +1,4 @@
+import { welcomeEmailForCreator, welcomeEmailForFan } from '@/data'
 import dbConnect from '@/lib/dbConfig'
 import { sendMail } from '@/lib/sendMail'
 import User from '@/modals/user'
@@ -12,7 +13,7 @@ export async function POST(req: NextRequest) {
 	try {
 		await dbConnect()
 		const body = await req.json()
-		const { name, email } = body
+		const { name, email, joinedAs } = body
 
 		if (!name || !email) {
 			return new Response(JSON.stringify({ message: 'name and email are required fields.' }), {
@@ -33,12 +34,19 @@ export async function POST(req: NextRequest) {
 		const newUser = await User.create(body)
 
 		if (newUser) {
-			await sendMail({
-				to: newUser.email,
-				html: 'HTML',
-				subject: 'Joined waitlisat',
-				text: 'Thank you..',
-			})
+			if (joinedAs === 'Fan') {
+				await sendMail({
+					to: newUser.email,
+					html: welcomeEmailForFan,
+					subject: 'Joined waitlisat',
+				})
+			} else {
+				await sendMail({
+					to: newUser.email,
+					html: welcomeEmailForCreator,
+					subject: 'Joined waitlisat',
+				})
+			}
 			return NextResponse.json({ message: 'Successfully joined the waitlist!', newUser: newUser })
 		} else {
 			return NextResponse.json({ messge: 'Something went wrong.' })

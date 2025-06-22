@@ -3,11 +3,10 @@ import nodemailer from 'nodemailer'
 interface IMailOptions {
 	to: string
 	subject: string
-	text: string
 	html: string
 }
 
-export async function sendMail({ to, subject, text, html }: IMailOptions) {
+export async function sendMail({ to, subject, html }: IMailOptions) {
 	const transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
@@ -20,7 +19,6 @@ export async function sendMail({ to, subject, text, html }: IMailOptions) {
 		from: process.env.EMAIL_USER,
 		to,
 		subject,
-		text,
 		html,
 	}
 

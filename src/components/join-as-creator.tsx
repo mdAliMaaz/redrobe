@@ -40,9 +40,9 @@ export const JoinAsCreator = () => {
 			setLoading(true)
 			const URL = process.env.NEXT_PUBLIC_BACKEND_URL
 			const response = await axios.post(`${URL}/waitlist`, formData)
+			setFormData({ name: '', email: '', phoneNumber: '', joinedAs: 'Creator' })
 			setSuccess(true)
 			showSuccess(response.data.message)
-			setFormData({ name: '', email: '', phoneNumber: '', joinedAs: 'Creator' })
 		} catch (error: any) {
 			showError(error?.response?.data?.message || 'Something went wrong.')
 			setError(error?.response?.data?.message || 'Something went wrong.')
