@@ -28,6 +28,7 @@ export async function sendMail({ to, subject, html }: IMailOptions) {
 		return { success: true, info }
 	} catch (error) {
 		console.error('Email send error:', error)
+		console.log(`Emial not sent for user ${to}`)
 		return { success: false, error }
 	}
 }
