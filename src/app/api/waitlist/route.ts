@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
 				await sendMail({
 					to: newUser.email,
 					html: welcomeEmailForFan,
-					subject: 'Joined waitlisat',
+					subject: 'Joined waitlist',
 				})
 			} else {
 				await sendMail({

@@ -2,7 +2,7 @@
 import React from 'react'
 import Container from './shared/container'
 import Heading from './shared/heading'
-import { aboutUs, aboutUs_2 } from '@/data'
+import { aboutUs, aboutUs_2, aboutUs_3 } from '@/data'
 import Image from 'next/image'
 import Button from './shared/button'
 import Link from 'next/link'
@@ -40,6 +40,16 @@ const AboutSection = () => {
 					>
 						<Image src={'/images/about-3.png'} alt="about-1" height={300} width={350} priority />
 						<p className="text-sm">{aboutUs_2}</p>
+						<div>
+							<p className="text-sm">Something bold is coming. Be the first to know.</p>
+							<p className="text-sm">
+								{' '}
+								<a href="#join">
+									<strong>Join out waitlist</strong>
+								</a>{' '}
+								and step into the future of fashion
+							</p>
+						</div>
 					</motion.div>
 				</section>
 			</Container>

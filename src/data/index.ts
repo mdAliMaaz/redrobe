@@ -1,8 +1,12 @@
 export const aboutUs =
-	'Garment production is an organized activity consisting of sequential processes such as laying, marking, cutting, stitching, checking, finishing, pressing and packaging. This is a process of converting raw materials into finished products. It will be difficult to maintain the industry if production is not, up to the mark if the preproduction phase of preparation of material is not properly carried out.'
+	'At ReDrobe, every piece is carefully curated to reflect the style of the creators you love — not just to match your vibe, but to make fashion more mindful.'
 
 export const aboutUs_2 =
-	'Ready to wear apparel or garment manufacturing involves many processing steps, beginning with the idea or design concept and ending with a finished product. Apparel manufacturing process involves Product Design, Fabric Selection and Inspection, Patternmaking, Grading, Marking, Spreading, Cutting, Bundling, Sewing, Pressing or Folding, Finishing and Detailing, Dyeing and Washing, QC etc.Ready to wear apparel or garment manufacturing involves many processing steps, beginning with'
+	'We’re not just a marketplace. We’re building a platform where creators and their communities can connect through pieces that carry real moments, energy, and style.'
+
+export const aboutUs_3 =
+	'Something bold is coming. Be the first to know.\
+  Join our waitlist and step into the future of fashion.'
 
 export const flinks = [
 	// { header: 'help and support', links: ['help', 'queries', 'team'] },
