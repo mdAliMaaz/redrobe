@@ -34,23 +34,19 @@ const AboutSection = () => {
 					>
 						<Image src={'/images/about-2.png'} alt="about-1" height={300} width={300} priority />
 					</motion.div>
-					<motion.div
-						whileHover={hoverEffect}
-						className="w-full flex justify-center items-center flex-col  gap-10"
-					>
+					<div className="w-full flex justify-center items-center flex-col  gap-10">
 						<Image src={'/images/about-3.png'} alt="about-1" height={300} width={350} priority />
 						<p className="text-sm">{aboutUs_2}</p>
-						<div>
+						<div className="w-full">
 							<p className="text-sm">Something bold is coming. Be the first to know.</p>
 							<p className="text-sm">
-								{' '}
 								<a href="#join">
-									<strong>Join out waitlist</strong>
+									<strong className="text-primary-red">Join out waitlist</strong>
 								</a>{' '}
 								and step into the future of fashion
 							</p>
 						</div>
-					</motion.div>
+					</div>
 				</section>
 			</Container>
 			<section className="bg-dark w-full flex items-end justify-center pt-5 px-4 relative overflow-hidden">
