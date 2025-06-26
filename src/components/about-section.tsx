@@ -54,9 +54,17 @@ const AboutSection = () => {
 				<div className="size-[50%] gradient-02 absolute"></div>
 				<div className="border-[1px] border-white/40 rounded-t-full pt-2.5 px-2.5  md:pt-4 md:px-4 relative">
 					<div className="flex items-end justify-center border-[1px] border-white/40 w-fit rounded-t-full pt-1.5 px-1.5 md:pt-3 md:px-3">
-						<h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-playfair-display font-light tracking-wider md:tracking-widest">
+						<motion.h1
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{
+								duration: 0.5,
+							}}
+							viewport={{ once: true }}
+							className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-playfair-display font-light tracking-wider md:tracking-widest"
+						>
 							ReDrobe.
-						</h1>
+						</motion.h1>
 						<div className="absolute left-1/2 top-[80%] -translate-x-1/2">
 							<Link href={'#join'}>
 								<Button text="JOIN NOW!" type="button" bgColor="white" width="full" />

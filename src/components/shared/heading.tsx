@@ -17,11 +17,12 @@ const Heading = ({ text, className, position }: IHeadingProps) => {
 			{title.map((el, i) => (
 				<motion.span
 					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
+					whileInView={{ opacity: 1 }}
 					transition={{
-						duration: 0.5,
+						duration: 0.6,
 						delay: i / 10,
 					}}
+					viewport={{ once: true }}
 					key={i}
 				>
 					{el}
