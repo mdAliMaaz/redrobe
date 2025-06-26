@@ -10,7 +10,7 @@ const Hero = () => {
 	return (
 		<Container size="lg">
 			<motion.section className="w-full relative">
-				<Image
+				{/* <Image
 					src={'/images/vector_1.png'}
 					alt="vector"
 					className="hidden md:block absolute -bottom-5 left-0"
@@ -23,7 +23,7 @@ const Hero = () => {
 					className="hidden md:block absolute top-0 right-0"
 					width={200}
 					height={200}
-				/>
+				/> */}
 				<div className="flex items-center justify-center">
 					<Heading
 						text="JOIN THE WAITLIST"

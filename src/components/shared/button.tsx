@@ -22,7 +22,7 @@ const Button = ({ text, type, width, rounded, bgColor, disabled }: IButtonProps)
 				bgColor === 'white'
 					? 'bg-primary-light text-black hover:bg-black hover:text-primary-light border-none'
 					: 'bg-primary-red text-primary-light hover:text-primary-red hover:bg-primary-light'
-			}  h-[40px] text-xs font-semibold p-1 md:p-2 transition-colors border-[1px] border-primary-red`}
+			}  h-[40px] text-xs font-semibold p-1 md:p-2 transition-colors border-[1px] border-primary-red z-10`}
 		>
 			{text}
 		</motion.button>
